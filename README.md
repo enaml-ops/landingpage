@@ -1,4 +1,4 @@
-[![wercker status](https://app.wercker.com/status/dfb8f3afbaf1fce433e3ff49dae2b5d4/m/master "wercker status")](https://app.wercker.com/project/bykey/dfb8f3afbaf1fce433e3ff49dae2b5d4)
+[![wercker status](https://app.wercker.com/status/787835327a70d7e077d288fd9fa77d09/s/master "wercker status")](https://app.wercker.com/project/bykey/787835327a70d7e077d288fd9fa77d09)
 
 # enaml Landing Page Website
 
