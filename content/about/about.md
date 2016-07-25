@@ -1,5 +1,5 @@
 ---
-Title: CFOps CLI
+Title: OMG CLI
 Draft: false
 ---
 
