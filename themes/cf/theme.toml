@@ -1,14 +1,14 @@
 name = "Landing Page"
 license = "Apache2"
-licenselink = "https://github.com/pivotalservices/cfops-landingpage/blob/master/LICENSE.md"
-description = "CFOps landing page theme."
-homepage = "https://github.com/pivotalservices/cfops-landingpage"
+licenselink = "https://github.com/enaml-ops/landingpage/blob/master/LICENSE.md"
+description = "enaml landing page theme."
+homepage = "https://github.com/enaml-ops/landingpage"
 tags = ["oss", "landing page"]
 features = ["social", "images" ]
 min_version= 0.14
 
 [author]
-     name = "sneal"
+     name = "jcalabrese"
 
 [original]
     author =  "crakjie"
