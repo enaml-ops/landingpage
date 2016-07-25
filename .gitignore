@@ -1,0 +1,8 @@
+public/*
+_builds/
+_projects/
+_steps/
+_cache/
+_temp/
+
+.deploy_default_env

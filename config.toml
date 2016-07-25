@@ -1,0 +1,27 @@
+baseurl = "http://enaml.pezapp.io/"
+languageCode = "en-us"
+title = "Enaml"
+theme = "cf"
+
+[params]
+  description = "Enaml - test driven infrastructure"
+
+[[params.actionlink]]
+    title = "github"
+    icon = "github"
+    url = "https://github.com/enaml-ops"
+
+[[params.actionlink]]
+    title = "download"
+    icon = "cloud-download"
+    url = "/downloads/release"
+
+[[params.social]]
+    title = "github"
+    icon = "github"
+    url = "https://github.com/enaml-ops"
+
+[[params.social]]
+    title = "gitter"
+    icon = "comment"
+    url = "https://gitter.im/enaml-ops"

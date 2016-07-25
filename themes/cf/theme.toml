@@ -1,0 +1,16 @@
+name = "Landing Page"
+license = "Apache2"
+licenselink = "https://github.com/pivotalservices/cfops-landingpage/blob/master/LICENSE.md"
+description = "CFOps landing page theme."
+homepage = "https://github.com/pivotalservices/cfops-landingpage"
+tags = ["oss", "landing page"]
+features = ["social", "images" ]
+min_version= 0.14
+
+[author]
+     name = "sneal"
+
+[original]
+    author =  "crakjie"
+    homepage = "https://github.com/crakjie/landing-page-hugo"
+    repo = "https://github.com/crakjie/landing-page-hugo"

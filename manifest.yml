@@ -1,0 +1,5 @@
+---
+applications:
+- name: enaml 
+  memory: 64M
+  random-route: false
