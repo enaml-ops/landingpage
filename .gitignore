@@ -6,3 +6,4 @@ _cache/
 _temp/
 
 .deploy_default_env
+.DS_Store
