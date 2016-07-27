@@ -8,21 +8,28 @@
     <div class="col-md-4 ">
         {{ .Content }}
         <br/>
-        <h3 id="version">Latest Release</h3>
+        <h2 id="version">
+          <span class="rel">Latest Release</span>
+          <span id="dlcount"></span>
+        </h2>
         <hr/>
-        <h2 class="fa fa-linux">
+        <h3 id="omg-linux">
+          <span class="fa fa-linux"></span>
           <a href="https://github.com/enaml-ops/omg-cli/releases/latest">Linux</a>
-          <span></span>
-        </h2>
+          <span class="badge"></span>
+        </h3>
         <hr/>
-        <h2 class="fa fa-apple">
+        <h3 id="omg-osx">
+          <span class="fa fa-apple"></span>
           <a href="https://github.com/enaml-ops/omg-cli/releases/latest">OS X</a>
-          <span></span>
-        </h2>
+          <span class="badge"></span>
+        </h3>
         <hr/>
-        <h2 class="fa fa-windows">
+        <h3 id="omg-windows">
+          <span class="fa fa-windows"></span>
           <a href="https://github.com/enaml-ops/omg-cli/releases/latest">Windows (not yet supported)</a>
-        </h2>
+          <span class="badge"></span>
+        </h3>
         <hr/>
     </div>
     <div class="col-md-4"></div>

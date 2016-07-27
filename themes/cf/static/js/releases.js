@@ -18,46 +18,28 @@ function getLatestGithubRelease(repo) {
         var asset = release.assets[j];
         totalDownloads += asset.download_count;
 
-        // TODO: for now this is kind of brute forced to search for omg only
-        if (!asset.name.startsWith("omg-")) {
-          continue;
-        }
-        var parts = asset.name.split('-');
-        var platform = parts.pop(); // 'osx', 'linux', etc.
-
         // compute time since last update
         var oneHour = 60 * 60 * 1000
         var oneDay = 24 * oneHour
         var dateDiff = new Date() - new Date(asset.updated_at)
         var timeAgo;
         if (dateDiff < oneDay) {
-          timeAgo = (dateDiff / oneHour).toFixed(0) + " hours ago";
+          timeAgo = (dateDiff / oneHour).toFixed(0) + "h ago";
         } else {
-          timeAgo = (dateDiff / oneDay).toFixed(0) + " days ago";
+          timeAgo = (dateDiff / oneDay).toFixed(0) + "d ago";
         }
 
-        var sel
-        switch (platform) {
-          case "osx":
-            sel = ".fa-apple ";
-            break;
-          case "linux":
-            sel = ".fa-linux ";
-            break;
-          // TODO: we aren't currently publishing windows releases...
-          default:
-            continue;
-        }
+        var sel = "#" + asset.name
 
         // update download link
-        $(sel + "a").attr("href", asset.browser_download_url)
+        $(sel + " > a").attr("href", asset.browser_download_url)
 
         // add release info
-        var releaseInfo = "updated " + timeAgo;
-        $(sel + "span").text(releaseInfo);
-        $(sel + "span").fadeIn("slow");
+        var releaseInfo = timeAgo;
+        $(sel + " .badge").text(releaseInfo);
       }
 
-      $("#version").text("Latest Release " + release.tag_name + " (" + totalDownloads + " downloads)");
+      $("#version .rel").text("Latest Release " + release.tag_name);
+      $("#dlcount").text("(" + totalDownloads + " downloads)");
     })
 }
