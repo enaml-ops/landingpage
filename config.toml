@@ -3,9 +3,6 @@ languageCode = "en-us"
 title = "Enaml"
 theme = "cf"
 
-[params]
-  image = "<img src=\"/img/enaml_white_green_slogan-honeycomb.pmg\"></img>"
-
 [[params.actionlink]]
     title = "github"
     icon = "github"
