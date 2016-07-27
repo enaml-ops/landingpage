@@ -11,13 +11,12 @@ function getLatestGithubRelease(repo) {
     var url = "https://api.github.com/repos/" + repo + "/releases/latest"
     $.getJSON(url).done(function (release) {
 
-      // update the version in the header
-      $("#version").text("Latest Release " + release.tag_name);
+      var totalDownloads = 0;
 
       // update individual download links
       for (var j = 0; j < release.assets.length; j++) {
         var asset = release.assets[j];
-        console.log("found release: " + asset.name)
+        totalDownloads += asset.download_count;
 
         // TODO: for now this is kind of brute forced to search for omg only
         if (!asset.name.startsWith("omg-")) {
@@ -25,7 +24,6 @@ function getLatestGithubRelease(repo) {
         }
         var parts = asset.name.split('-');
         var platform = parts.pop(); // 'osx', 'linux', etc.
-        var downloadCount = asset.download_count;
 
         // compute time since last update
         var oneHour = 60 * 60 * 1000
@@ -55,16 +53,11 @@ function getLatestGithubRelease(repo) {
         $(sel + "a").attr("href", asset.browser_download_url)
 
         // add release info
-        var releaseInfo = "updated " + timeAgo + ", " + plural(downloadCount);
+        var releaseInfo = "updated " + timeAgo;
         $(sel + "span").text(releaseInfo);
         $(sel + "span").fadeIn("slow");
       }
-    })
-}
 
-function plural(count) {
-  if (count == 1) {
-    return count.toLocaleString() + " download"
-  }
-  return count.toLocaleString() + " downloads"
+      $("#version").text("Latest Release " + release.tag_name + " (" + totalDownloads + " downloads)");
+    })
 }
