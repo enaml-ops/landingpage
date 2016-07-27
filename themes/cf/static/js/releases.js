@@ -1,8 +1,10 @@
 var OMG_GITHUB_REPO = "enaml-ops/omg-cli"
+var PLUGINS_GITHUB_REPO = "enaml-ops/omg-product-bundle"
 
 jQuery(function($) {
   //setDownloadLinksToLatestVersion();
   getLatestGithubRelease(OMG_GITHUB_REPO);
+  getLatestGithubRelease(PLUGINS_GITHUB_REPO);
 });
 
 // A slightly modified version of:
@@ -32,6 +34,7 @@ function getLatestGithubRelease(repo) {
         var sel = "#" + asset.name
 
         // update download link
+        $(sel + " > a").text(asset.name)
         $(sel + " > a").attr("href", asset.browser_download_url)
 
         // add release info
