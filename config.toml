@@ -17,6 +17,6 @@ theme = "cf"
     url = "https://github.com/enaml-ops"
 
 [[params.social]]
-    title = "gitter"
-    icon = "comment"
-    url = "https://gitter.im/enaml-ops"
+    title = "Slack"
+    icon = "slack"
+    url = "https://pivotal.slack.com/messages/enaml/"
