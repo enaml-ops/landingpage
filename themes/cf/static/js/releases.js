@@ -1,5 +1,5 @@
-var OMG_GITHUB_REPO = "enaml-ops/omg-cli"
-var PLUGINS_GITHUB_REPO = "enaml-ops/omg-product-bundle"
+var OMG_GITHUB_REPO = "omg-cli"
+var PLUGINS_GITHUB_REPO = "omg-product-bundle"
 
 jQuery(function($) {
   //setDownloadLinksToLatestVersion();
@@ -10,7 +10,7 @@ jQuery(function($) {
 // A slightly modified version of:
 // https://stackoverflow.com/questions/24987542/is-there-a-link-to-github-for-downloading-a-file-in-the-latest-release-of-a-repo
 function getLatestGithubRelease(repo) {
-    var url = "https://api.github.com/repos/" + repo + "/releases/latest"
+    var url = "https://api.github.com/repos/enaml-ops/" + repo + "/releases/latest"
     $.getJSON(url).done(function (release) {
 
       var totalDownloads = 0;
@@ -42,7 +42,8 @@ function getLatestGithubRelease(repo) {
         $(sel + " .badge").text(releaseInfo);
       }
 
-      $("#version .rel").text("Latest Release " + release.tag_name);
-      $("#dlcount").text("(" + totalDownloads + " downloads)");
+      sel = "#" + repo
+      $(sel + " .rel").text("Latest Release " + release.tag_name);
+      $(sel + " .dlcount").text("(" + totalDownloads + " downloads)");
     })
 }
