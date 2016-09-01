@@ -3,7 +3,7 @@ title = "PCF (ERT) Product Plugin"
 description = "PCF (ERT) Product Plugin"
 date = "2016-08-19"
 +++
-# CF Product Plugin 
+# CF Product Plugin
 ```
 This is a product plugin for Elastic Runtime (CF)
 
@@ -36,8 +36,6 @@ cloudfoundry-plugin-osx \
 --vault-rotate \
 --stemcell-name ubuntu-trusty \
 --infer-from-cloud \
---nfs-share-path /var/vcap/store \
---doppler-drain-buffer-size 256 \
 --nfs-allow-from-network-cidr 10.0.0.1/24
 ```
 
@@ -53,19 +51,18 @@ $> cat vault-ip.json
 {
   "nfs-ip": "10.0.0.31",
   "mysql-proxy-ip": "10.0.0.30",
-  "mysql-ip": "10.0.0.29", 
-  "haproxy-ip": "10.0.0.2", 
+  "mysql-ip": "10.0.0.29",
+  "haproxy-ip": "10.0.0.2",
   "consul-ip": "10.0.0.23",
-  "nats-machine-ip": "10.0.0.24", 
+  "nats-machine-ip": "10.0.0.24",
   "etcd-machine-ip": "10.0.0.25",
   "diego-brain-ip": "10.0.0.26",
   "doppler-ip": "10.0.0.27",
   "loggregator-traffic-controller-ip": "10.0.0.28",
-  "router-ip": "10.0.0.20,10.0.0.21,10.0.0.22", 
+  "router-ip": "10.0.0.20,10.0.0.21,10.0.0.22",
   "diego-cell-ip": "10.0.0.1,10.0.0.2,10.0.0.3",
   "diego-db-ip": "10.0.1.1",
   "mysql-proxy-external-host": "10.0.0.1",
-  "nfs-server-address":"10.0.0.40",
 }
 $> ./vault write ${VAULT_HASH} @vault-ip.json
 $> ./vault read ${VAULT_HASH}
@@ -121,7 +118,7 @@ passwords and certs rather than populating those fields manually*
 
 *you might notice the optional use of infer from cloud. this allows the user to let the plugin try to guess options from the cloud config*
 
-- Flags: 
+- Flags:
   - `--infer-from-cloud` : this will pull in the targetted bosh's cloud config and use the values defined there to set the plugin flag argument values (user doesnt need to set flags manually)
     - (disktype, vmtype, az, network) information will all be used to populate the following flags:
       - "mysql-disk-type"
@@ -148,7 +145,5 @@ passwords and certs rather than populating those fields manually*
       - "cc-worker-vm-type"
       - "cc-vm-type"
       - "loggregator-traffic-controller-vmtype"
-      - "bootstrap-vm-type"
-      - "acceptance-tests-vm-type"
       - "az"
       - "network"
