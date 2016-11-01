@@ -132,14 +132,11 @@ concourse-plugin-osx \
 --worker-vm-type small \
 --database-vm-type small \
 --network-name private \
---url my.concourse.com \
---username concourse \
---password concourse \
---web-instances 1 \
---web-azs us-east-1c \
---worker-azs us-east-1c \
---database-azs us-east-1c \
---bosh-stemcell-alias trusty \
---postgresql-db-pwd secret \
+--external-url my.concourse.com \
+--concourse-username concourse \
+--concourse-password concourse \
+--concourse-db-pwd secret \
+--az us-east-1c \
+--stemcell-alias trusty \
 --database-storage-type medium
 ```
