@@ -45,7 +45,7 @@ cloudfoundry-plugin-osx \
 $> # example to demonstrate how we would load up the vault with data
 $> #set where your vault lives
 $> VAULT_ADDR=http://192.168.0.1:8200
-$> #set which hash your writing to
+$> #set which hash you're writing to
 $> VAULT_HASH=secret/pcf-np-1-ips
 $> cat vault-ip.json
 {
@@ -62,7 +62,7 @@ $> cat vault-ip.json
   "router-ip": "10.0.0.20,10.0.0.21,10.0.0.22",
   "diego-cell-ip": "10.0.0.1,10.0.0.2,10.0.0.3",
   "diego-db-ip": "10.0.1.1",
-  "mysql-proxy-external-host": "10.0.0.1",
+  "mysql-proxy-external-host": "10.0.0.1"
 }
 $> ./vault write ${VAULT_HASH} @vault-ip.json
 $> ./vault read ${VAULT_HASH}
