@@ -1,10 +1,12 @@
 var OMG_GITHUB_REPO = "omg-cli"
 var PLUGINS_GITHUB_REPO = "omg-product-bundle"
+var ERT_PLUGIN_GITHUB_REPO = "ert-plugin"
 
 jQuery(function($) {
   //setDownloadLinksToLatestVersion();
   getLatestGithubRelease(OMG_GITHUB_REPO);
   getLatestGithubRelease(PLUGINS_GITHUB_REPO);
+  getLatestGithubRelease(ERT_PLUGIN_GITHUB_REPO);
 });
 
 // A slightly modified version of:
